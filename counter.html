@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Counter</title>
+	<meta charset="utf-8">
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		height: 100vh;
+		font-family: Arial, Helvetica, sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.display{
+		text-align: center;
+		font-size: 48px;
+		margin: 30px;
+		padding: 10px;
+		color: #008080;
+	}
+	.btn{
+		text-align: center;
+	}
+	.btn button{
+		font-weight: 600;
+		font-size: 20px;
+		background-color: #e3f2df;
+		outline: none;
+		cursor: pointer; 
+	}
+	.res{
+		margin: 15px;
+		padding: 10px 15px;
+		border-radius: 50px;
+	}
+	.dec{
+		color: red;
+		padding-bottom:8px;
+		border-color: red;
+		border-radius: 50%;
+		margin: 15px;
+		height: 70px;
+		width: 70px;
+	}
+	.inc{
+		color: green;
+		padding-bottom:0px;
+		border-color: green;
+		border-radius: 50%;
+		margin: 15px;
+		height: 70px;
+		width: 70px;
+	}
+	
+</style>
+<body>
+	<div class="container">
+		<div class="display">
+			<h1 class="num">0</h1>
+		</div>
+		<div class="btn">
+			<button class="dec" ><h1>-</h1></button>
+			<button class="res" >Reset</button>
+			<button class="inc"><h1>+</h1></button>
+		</div>
+	</div>
+
+	<script>
+	let count = 0;
+	let d=document.querySelector(".dec");
+	let r=document.querySelector(".res");
+	let i=document.querySelector(".inc");
+	let nm=document.querySelector(".num") ;
+
+	d.addEventListener("click",function(){
+		count-- ;
+		nm.innerHTML = count ;
+		if(count <= 0){
+			count=0
+			nm.innerHTML = count ;
+			nm.style.color = "#008080" ;
+	}
+	})
+
+	i.addEventListener("click",function(){
+		count++ ;
+		nm.innerHTML = count ;
+		if(count > 0){
+		nm.style.color = "green" ;
+	}
+	})
+
+	r.addEventListener("click",function(){
+		count = 0 ;
+		nm.innerHTML = count ;
+		if(count === 0){
+		nm.style.color = "#008080" ;
+	}
+	})
+	</script>
+</body>
+</html>
